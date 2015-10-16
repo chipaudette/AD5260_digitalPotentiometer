@@ -51,6 +51,8 @@ void loop() {
 
   // change the resistance from min to max:
   for (int level = 0; level < 255; level += 50) {
+
+    //to go as fast as possible, comment out these print statments
     Serial.print("Commanding value: ");
     Serial.print(level);
     Serial.print(", Should Indicate ");
@@ -62,8 +64,8 @@ void loop() {
     SPI.transfer(level);//  send value via SPI:
     digitalWrite(slaveSelectPin,HIGH);// take the SS pin high to de-select the chip
 
-    //wait to allow measurement
-    delay(3000);  //delay X seconds
+    //wait to allow measurement with voltmeter
+    delay(3000);  //comment out this line to go as fast as possible
   }
 }
 
