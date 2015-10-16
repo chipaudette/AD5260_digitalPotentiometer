@@ -50,7 +50,7 @@ void setup() {
 void loop() {
 
   // change the resistance from min to max:
-  for (int level = 0; level < 255; level += 25) {
+  for (int level = 0; level < 255; level += 50) {
     Serial.print("Commanding value: ");
     Serial.print(level);
     Serial.print(", Should Indicate ");
