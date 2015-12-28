@@ -18,10 +18,12 @@
   * SDI - to digital pin 11 (MOSI pin)
   * CLK - to digital pin 13 (SCK pin)
 
- created 04 Oct 2015
+ Created 04 Oct 2015
  by Chip Audette
 
  based on Arduino Example AD5206 by Tom Igoe
+
+ Updated by Chip Audette in Dec 2015 to add the variable clock speed
   
 */
 
