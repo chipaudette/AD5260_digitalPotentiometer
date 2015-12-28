@@ -32,7 +32,8 @@
 
 // set pin 10 as the slave select for the digital pot:
 const int slaveSelectPin = 10;
-
+const int ledPin = 9;
+int LED_ON = 1;
 void setup() {
   
   //start serial for debugging
@@ -41,6 +42,8 @@ void setup() {
   // set the slaveSelectPin as an output:
   pinMode (slaveSelectPin, OUTPUT);
   pinMode (slaveSelectPin, HIGH);
+  pinMode(ledPin,OUTPUT);
+  digitalWrite(ledPin,LED_ON);
   
   // initialize SPI:
   SPI.begin(); 
@@ -51,13 +54,15 @@ void loop() {
 
   // change the resistance from min to max:
   for (int level = 0; level < 255; level += 50) {
+    LED_ON = !LED_ON;
+    digitalWrite(ledPin,LED_ON);
 
     //to go as fast as possible, comment out these print statments
-    Serial.print("Commanding value: ");
-    Serial.print(level);
-    Serial.print(", Should Indicate ");
-    Serial.print(((float)level)/255.0*5.0);
-    Serial.println(" V");
+//    Serial.print("Commanding value: ");
+//    Serial.print(level);
+//    Serial.print(", Should Indicate ");
+//    Serial.print(((float)level)/255.0*5.0);
+//    Serial.println(" V");
 
     //send value via SPI
     digitalWrite(slaveSelectPin,LOW);// take the SS pin low to select the chip
