@@ -11,12 +11,9 @@
  with the resistance value (0 - 255).  
  
  The circuit:
-  * A pin of AD5260 connected to +5V
-  * B pin of AD5260 connected to ground
-  * An LED and a 220-ohm resisor in series connected from each W pin to ground
-  * CS - to digital pin 10  (SS pin)
-  * SDI - to digital pin 11 (MOSI pin)
-  * CLK - to digital pin 13 (SCK pin)
+  * CS - to Arduino digital pin 10  (SS pin)
+  * SDI - to Arduino digital pin 11 (MOSI pin)
+  * CLK - to Arduino digital pin 13 (SCK pin)
 
  Created 04 Oct 2015
  by Chip Audette
